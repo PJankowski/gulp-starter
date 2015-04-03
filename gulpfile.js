@@ -51,7 +51,7 @@ gulp.task('html', ['stylus'], function (){
 });
 
 gulp.task('serve', function (){
-	gulp.src('/')
+	gulp.src('./build')
 		.pipe(webserver({
 			livereload: true,
 			directoryListing: false,
@@ -64,6 +64,4 @@ gulp.task('watch', function (){
 	gulp.watch('./js/**/*.js', ['jslint']);
 });
 
-gulp.task('serve', ['stylus', 'jslint', 'serve', 'watch']);
-
-gulp.task('build', ['stylus', 'images', 'html']);
+gulp.task('serve', ['stylus', 'jslint', 'html', 'serve', 'watch']);
